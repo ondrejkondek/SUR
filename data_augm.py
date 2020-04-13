@@ -22,18 +22,20 @@ def horizontal_flip(image_array: ndarray):
 
 
 # our folder path containing some images
-folder_path = './data_projekt/trainwithaugm/target_train'
+folder_path = './data/train_data/target'
 # the number of file to generate
-num_files_desired = 151
+num_files_desired = 330
 
 # loop on all files of the folder and build a list of files paths
 images = [os.path.join(folder_path, f) for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))]
 
-num_generated_files = 0
+num_generated_files = 1
+i = 0
 while num_generated_files <= num_files_desired:
+
     # random image from the folder
     try:
-        image_path = random.choice(images)
+        image_path = images[i]
         # read image as an two dimensional array of pixels
         image_to_transform = sk.io.imread(image_path)
     except:
@@ -62,5 +64,9 @@ while num_generated_files <= num_files_desired:
 
     # write image to the disk
     sk.io.imsave(new_file_path, transformed_image)
-    num_generated_files += 1
     
+    num_generated_files += 1
+    if (i == len(images)-1):
+        i = 0
+    else: 
+        i += 1

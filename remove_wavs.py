@@ -1,6 +1,6 @@
 import os
 
-dir_name = "./data_projekt/test/non_target_dev"
+dir_name = "./data/train_target"
 test = os.listdir(dir_name)
 
 for item in test:

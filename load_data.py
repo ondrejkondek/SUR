@@ -6,9 +6,9 @@ from tqdm import tqdm
 import random
 import pickle
 
-DATADIR = "./data_projekt/trainwithaugm"
+DATADIR = "./data/train_data"
 
-CATEGORIES = ["target_train", "non_target_train"]
+CATEGORIES = ["target", "no_target"]
 
 training_data = []
 
