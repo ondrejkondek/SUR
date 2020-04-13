@@ -27,29 +27,29 @@ model = Sequential()
 model.add(Conv2D(256, (3, 3), input_shape=X.shape[1:]))
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2, 2)))
-# model.add(Dropout(0.1))
+
 
 model.add(Conv2D(256, (3, 3)))
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2, 2)))
-# model.add(Dropout(0.1))
 
 model.add(Flatten())  # this converts our 3D feature maps to 1D feature vectors
 
-# model.add(Dense(64))
+model.add(Dense(64))
 
 model.add(Dense(2))
 model.add(Activation('softmax'))
 
 model.compile(loss='binary_crossentropy',
-              optimizer='sgd',
-              metrics=['accuracy'])
+optimizer='adam',
+metrics=['accuracy'])
 
 
-model.fit(X, y, batch_size=16, epochs=3, validation_split=0.2)
+model.fit(X, y, batch_size=16, epochs=10, validation_split=0.2)
 
 model.save("model.h5")
 print("Saved model to disk")
+
 
 
 # model = Sequential()
@@ -57,11 +57,12 @@ print("Saved model to disk")
 # model.add(Conv2D(256, (3, 3), input_shape=X.shape[1:]))
 # model.add(Activation('relu'))
 # model.add(MaxPooling2D(pool_size=(2, 2)))
-# 
+# # model.add(Dropout(0.1))
 # 
 # model.add(Conv2D(256, (3, 3)))
 # model.add(Activation('relu'))
 # model.add(MaxPooling2D(pool_size=(2, 2)))
+# # model.add(Dropout(0.1))
 # 
 # model.add(Flatten())  # this converts our 3D feature maps to 1D feature vectors
 # 
@@ -71,11 +72,12 @@ print("Saved model to disk")
 # model.add(Activation('softmax'))
 # 
 # model.compile(loss='binary_crossentropy',
-#               optimizer='adam',
+#               optimizer='sgd',
 #               metrics=['accuracy'])
 # 
 # 
-# model.fit(X, y, batch_size=16, epochs=10, validation_split=0.2)
+# model.fit(X, y, batch_size=16, epochs=3, validation_split=0.2)
 # 
 # model.save("model.h5")
 # print("Saved model to disk")
+# 
