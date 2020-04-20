@@ -21,7 +21,6 @@ def create_training_data():
         class_num = CATEGORIES.index(category)  # ziska index  (0 or a 1). 0 = target 1 = no_target
 
         for img in tqdm(os.listdir(path)):  
-
             try:
                 img_array = cv2.imread(os.path.join(path,img) ,cv2.IMREAD_GRAYSCALE)
                 new_array = cv2.resize(img_array, (IMG_SIZE, IMG_SIZE))  # normalizacia - velkosti

@@ -26,17 +26,15 @@ test_data = pickle.load(pickle_in)
 pickle_in = open("test_label.pickle","rb")
 test_label = pickle.load(pickle_in)
 
-
-# predicted = model.predict_proba(test_data)
-# print(predicted)
-
-
+####################################################
+# testing data
+####################################################
 predicted = model.predict(test_data)
 print(predicted)
 
 predicted = np.argmax(predicted, axis = 1)
-# print(predicted)
 print("\n")
 print(test_label)
 print('\n')
 print(confusion_matrix(test_label, predicted))
+####################################################
