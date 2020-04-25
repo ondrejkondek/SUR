@@ -86,6 +86,5 @@ for i in range(len(predicted)):
     f.write(str(res(1 - predicted[i])))
     f.write("\n")
     
-    #print(name[i], 1 - predicted[i], res(1 - predicted[i]))    
 
 f.close()

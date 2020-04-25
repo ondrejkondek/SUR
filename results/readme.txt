@@ -1,0 +1,4 @@
+Finalne odovzdane vysledky
+
+res_trained_all_dataset.txt
+res_trained_all_dataset3.txt
